@@ -3,7 +3,7 @@
   "main": "./lib/up2date",
   "version": "0.0.1",
   "description": "keep atom up to date",
-  "repository": "https://github.com/atom/up2date",
+  "repository": "https://github.com/malko/atom-up2date",
   "authors": [
       {"name": "Jonathan Gotti", "email": "jgotti@jgotti.org"}
   ],
