@@ -1,7 +1,7 @@
 {
   "name": "up2date",
   "main": "./lib/up2date",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "keep atom up to date",
   "repository": "https://github.com/malko/atom-up2date",
   "authors": [
