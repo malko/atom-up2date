@@ -1,0 +1,17 @@
+{
+  "name": "up2date",
+  "main": "./lib/up2date",
+  "version": "0.0.1",
+  "description": "keep atom up to date",
+  "repository": "https://github.com/atom/up2date",
+  "authors": [
+      {"name": "Jonathan Gotti", "email": "jgotti@jgotti.org"}
+  ],
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+      "semver": "4.1.x"
+  }
+}
