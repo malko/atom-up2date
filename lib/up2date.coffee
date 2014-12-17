@@ -2,7 +2,9 @@ Up2dateView = require './up2date-view'
 semver = require 'semver'
 releasesCache =
 getLatestRelease = (releaseList) ->
-    releaseList.sort(semver.rcompare)[0]
+    releaseList.sort( (a,b) ->
+      semver.rcompare(a.tag_name, b.tag_name)
+   )[0]
 
 module.exports =
   up2dateView: null
