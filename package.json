@@ -1,17 +1,20 @@
 {
   "name": "up2date",
   "main": "./lib/up2date",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "keep atom up to date",
   "repository": "https://github.com/malko/atom-up2date",
   "authors": [
-      {"name": "Jonathan Gotti", "email": "jgotti@jgotti.org"}
+    {
+      "name": "Jonathan Gotti",
+      "email": "jgotti@jgotti.org"
+    }
   ],
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
   "dependencies": {
-      "semver": "4.1.x"
+    "semver": "4.1.x"
   }
 }
