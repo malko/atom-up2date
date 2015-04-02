@@ -38,4 +38,4 @@ class Up2dateView
     if @element.parentElement?
       @element.remove()
     else
-      atom.workspaceView.append(@element)
+      atom.workspace.addTopPanel({item:@element})
