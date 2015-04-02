@@ -18,9 +18,8 @@ class Up2dateView
 
     message.classList.add('message')
     @element.appendChild(message)
-    @element.querySelector('.cancel').addEventListener('click', () ->
-        self.toggle()
-    );
+    addActionListener = (button) -> button.addEventListener('click', () -> self.toggle())
+    [].slice.call(@element.querySelectorAll('.actions a')).forEach(addActionListener)
 
   setLatestRelease: (release) ->
     @element.querySelector('#up2date_latest_tag').innerHTML = release.tag_name
