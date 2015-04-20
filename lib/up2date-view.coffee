@@ -13,13 +13,14 @@ class Up2dateView
         , '<dl><dt>current atom version: v' + atom.getLoadSettings().appVersion + '</dt>'
         , '<dt>latest atom version: <span id="up2date_latest_tag">...</span></dt>'
         , '<dd id="up2date_latest_desc"></dd>'
-        , '</dl><div class="actions"><a class="cancel">cancel</a> <a href="https://github.com/atom/atom/releases">go to download page</a></div>'
+        , '</dl><div class="actions"><a class="cancel">cancel</a> <a href="https://github.com/atom/atom/releases" class="ok">go to download page</a></div>'
     ].join('')
 
     message.classList.add('message')
     @element.appendChild(message)
-    addActionListener = (button) -> button.addEventListener('click', () -> self.toggle())
-    [].slice.call(@element.querySelectorAll('.actions a')).forEach(addActionListener)
+
+    @element.querySelector('.actions .cancel').addEventListener('click', () -> self.toggle());
+    @element.querySelector('.actions .ok').addEventListener('click', () -> self.asyncToggle());
 
   setLatestRelease: (release) ->
     @element.querySelector('#up2date_latest_tag').innerHTML = release.tag_name
@@ -32,6 +33,9 @@ class Up2dateView
   # Tear down any state and detach
   destroy: ->
     @element.remove()
+
+  asyncToggle: ->
+     setTimeout(this.toggle.bind(this), 10)
 
   # Toggle the visibility of this view
   toggle: ->
