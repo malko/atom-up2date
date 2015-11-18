@@ -13,7 +13,7 @@ class Up2dateView
         , '<dl><dt>current atom version: v' + atom.getLoadSettings().appVersion + '</dt>'
         , '<dt>latest atom version: <span id="up2date_latest_tag">...</span></dt>'
         , '<dd id="up2date_latest_desc"></dd>'
-        , '</dl><div class="actions"><a class="cancel">cancel</a> <a href="https://github.com/atom/atom/releases" class="ok">go to download page</a></div>'
+        , '</dl><div class="actions"><a class="cancel">cancel</a> <a href="https://github.com/atom/atom/releases" class="ok" id="up2date_release_link">go to download page</a></div>'
     ].join('')
 
     message.classList.add('message')
@@ -25,6 +25,7 @@ class Up2dateView
   setLatestRelease: (release) ->
     @element.querySelector('#up2date_latest_tag').innerHTML = release.tag_name
     @element.querySelector('#up2date_latest_desc').innerHTML = release.body.replace(/\n/g, '<br />')
+    @element.querySelector('#up2date_release_link').href = 'https://github.com/atom/atom/releases/tag/' + release.tag_name
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
